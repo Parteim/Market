@@ -1,0 +1,40 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+
+{% block main_section %}
+
+
+  <section class="Content">
+
+    <div class="products__list">
+
+      <div class="phone products__item">
+
+        <img src="{% static 'img/products__img/phone.png' %}" alt="" class="product__img__phone">
+        <p class="price">£89.99</p>
+
+      </div>
+
+
+      <div class="printer products__item">
+
+        <img src="{% static 'img/products__img/printer.png' %}" alt="" class="product__img__printer">
+        <p class="price">£47.50</p>
+
+      </div>
+
+      <div class="tv products__item">
+
+        <img src="{% static 'img/products__img/tv.png' %}" alt="" class="product__img__tv">
+        <p class="price">£107  £89.99 </p>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section></section>
+{% endblock %}
+
+
