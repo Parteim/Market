@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
-  <title></title>
+  <title>{{ title }}</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="{% static 'icon.png' %}">
@@ -36,8 +36,8 @@
     <div class="top__line__box">
       <a class="top__line__item__text">Currency : GBP</a>
       <ul class="sign__up__menu">
-        <li class="top__line__item"><a href="#" class="top__line__item__link">Регистрация</a></li>
-        <li class="top__line__item"><a href="#" class="top__line__item__link">Вход</a></li>
+        <li class="top__line__item"><a href="{% url 'sign-up' %}" class="top__line__item__link">Регистрация</a></li>
+        <li class="top__line__item"><a href="{% url 'sign-in' %}" class="top__line__item__link">Вход</a></li>
         <li class="top__line__item"><a class="top__line__item__link"><i class=" fas fa-shopping-cart"></i>Пусто</a></li>
       </ul>
     </div>
