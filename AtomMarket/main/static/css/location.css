@@ -1,0 +1,61 @@
+
+/* .main_bg {
+  background: url(../img/slider_bg.png) no-repeat center top / cover;
+} */
+
+
+.Map_section {
+  padding: 60px 0;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+
+  position: relative;
+}
+
+.map {
+  width: 70%;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.our_location_information {
+  width: 30%;
+
+  background-color: #f8f8f8;
+
+  margin: 10px;
+  padding: 30px;
+
+  color: #727272;
+}
+
+.location_title {
+  font-size: 21px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+.location_info-list {
+  list-style: none;
+
+  margin-left: 10px;
+  padding: 0;
+
+  font-size: 17px;
+}
+
+.location_info-list li {
+  margin: 10px 0;
+}
+
+.location_info-list li i {
+  margin: 0 10px;
+}

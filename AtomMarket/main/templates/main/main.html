@@ -1,109 +1,144 @@
 {% load static %}
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="ru">
 
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
-  <title>{{ title }}</title>
+  <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="{% static 'icon.png' %}">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="{% static 'CSS/normalize.css' %}">
-  <link rel="stylesheet" href="{% static 'CSS/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  {% block styles %}
+
+  {% endblock %}
 
   <meta name="theme-color" content="#fafafa">
-  <script src="{% static 'js/main.js' %}">
+  <script src="./js/main.js">
 
   </script>
 </head>
 
 <body>
+
 <header>
 
-  <div class="header__bg"></div>
-    {% block title__section %}
-
-  <h1 class="main__title">
-    ATOM
-  </h1>
-
-        {% endblock %}
-
   <div class="top__line">
-    <div class="top__line__box">
-      <a class="top__line__item__text">Currency : GBP</a>
-      <ul class="sign__up__menu">
-        <li class="top__line__item"><a href="{% url 'sign-up' %}" class="top__line__item__link">Регистрация</a></li>
-        <li class="top__line__item"><a href="{% url 'sign-in' %}" class="top__line__item__link">Вход</a></li>
-        <li class="top__line__item"><a class="top__line__item__link"><i class=" fas fa-shopping-cart"></i>Пусто</a></li>
+
+    <div class="container">
+      <a href="#">Currency:GBP</a>
+
+      <ul class="top_menu">
+        <li class="item_top_menu"><a href="{% url 'sign-up' %}">Register</a></li>
+        <li class="item_top_menu"><a href="{% url 'sign-in' %}">Sign in</a></li>
+        <li class="item_top_menu cart">
+          <a href="{% url 'cart' %}">
+            <i class="fas fa-shopping-cart"></i>
+            empty
+            <i class="fas fa-angle-down"></i>
+          </a>
+        </li>
       </ul>
+
     </div>
+
   </div>
 
-  <nav class="main__nav__bur">
-    <a class="main__site__title" href="#">ATOM <span>Store</span></a>
-    <ul class="main__menu">
-      <li id="first__list" class="main__menu__item"><a class="main__menu__item__link" href="#">Mans <i
-        class="fas fa-chevron-down"></i></a>
-        <div class="menu__list">
-          <div class="menu__list__helper">
-            <div class="menu__list__item">
-              <p class="menu__list__item__part__text">Casuals</p>
-              <ul class="menu__list__item__part">
-                <li class="menu__list__instance"><a href="#">Jackets</a></li>
-                <li class="menu__list__instance"><a href="#">Hoodies & Sweatshirts</a></li>
-                <li class="menu__list__instance"><a href="#">Polo Shirts</a></li>
-                <li class="menu__list__instance"><a href="#">Sportswear</a></li>
-                <li class="menu__list__instance"><a href="#">Trousers & Chinos</a></li>
-                <li class="menu__list__instance"><a href="#">T-Shirts</a></li>
-              </ul>
-            </div>
-            <div class="menu__list__item">
-              <p class="menu__list__item__part__text">Formal</p>
-              <ul class="menu__list__item__part">
-                <li class="menu__list__instance"><a href="#">Jackets</a></li>
-                <li class="menu__list__instance"><a href="#">Shirts</a></li>
-                <li class="menu__list__instance"><a href="#">Suits</a></li>
-                <li class="menu__list__instance"><a href="#">Trousers</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="sale">
-            Autumn sale!
-            up to 50% off
-          </div>
-        </div>
-      </li>
-      <li class="main__menu__item"><a class="main__menu__item__link" href="#">Women</a></li>
-      <li class="main__menu__item"><a class="main__menu__item__link" href="#">The brand</a></li>
-      <li class="main__menu__item"><a class="main__menu__item__link" href="#">Local stories</a></li>
-      <li class="main__menu__item"><a class="main__menu__item__link" href="#">Local book</a></li>
-      <li class="main__menu__item">
-        <form class="search__form" method="post">
-          <label for="search">
-            <input placeholder="Поиск" id="search" type="text">
-            <button class="search__btn"><i class="fas fa-search"></i></button>
-          </label>
-        </form>
-      </li>
-    </ul>
-  </nav>
+  <div class="main_menu_bg">
+
+    <div class="main_menu">
+
+      <h2 class="home_title">ATOM <span>STORE</span> </h2>
+
+      <menu class="main_menu_of_site">
+        <li class="menu_item"> <a href="#">menu</a> </li>
+        <li class="menu_item"> <a href="#">womens</a> </li>
+        <li class="menu_item"> <a href="#">the brand</a> </li>
+        <li class="menu_item"> <a href="#">local stores</a> </li>
+        <li class="menu_item search_item_of_menu">
+          <form>
+            {% csrf_token %}
+            <label class="search_container" for="search">
+
+              <input type="text" id="search" placeholder="Search...">
+              <button class="search_btn">
+                <i class="fas fa-search"></i>
+              </button>
+
+            </label>
+          </form>
+        </li>
+      </menu>
+
+    </div>
+
+  </div>
+
+  <div class="main_bg">
+
+     {% block title_section %}
+
+    <h1 class="main_title">
+      Atom
+    </h1>
+
+     {% endblock %}
+
+  </div>
+
 </header>
 
+
+
+
+{% block main %}
 <main>
-
-    {% block main_section %}
-
-{% endblock %}
-
 </main>
-
-<footer></footer>
-
-{% block for_scripts %}
 {% endblock %}
+
+
+
+
+<footer>
+
+  <form class="feedback_form">
+    {% csrf_token %}
+
+    <h3 class="feedback_title">
+      Feedback
+    </h3>
+
+    <label for="email_feedback_form">
+      <input type="text" id="email_feedback_form" placeholder="Email...">
+    </label>
+
+    <label for="text_feedback_form">
+      <input type="text" id="text_feedback_form" placeholder="Text...">
+    </label>
+
+    <button type="submit" class="btn_of_feedback_form">
+      send
+    </button>
+
+
+  </form>
+
+  <div class="bttom_line">
+
+    <p class="date">2019 - 2200</p>
+
+  </div>
+
+</footer>
+
 </body>
+ {% block scripts %}
+
+ {% endblock %}
 </html>

@@ -1,0 +1,37 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+  {% block styles %}
+
+  <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+
+  {% endblock %}
+
+{% block main %}
+
+<main>
+
+<section class="Sign">
+
+<form class="sign_form" method="POST">
+  {% csrf_token %}
+
+  <h3 class="sign_title">Sign in</h3>
+
+<!--  <label for="Email"><input placeholder="Email..." type="email" id="Email"></label>-->
+<!--  <label for="Password"><input placeholder="Password..." type="password" id="Password"></label>-->
+<!--  <label for="Repeat_password"><input placeholder="Password agane..." type="password" id="Repeat_password"></label>-->
+
+  {{ form }}
+
+  <button type="submit" class="sign_btn">
+    Sign in
+  </button>
+
+</form>
+
+</section>
+
+</main>
+
+{% endblock %}

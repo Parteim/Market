@@ -1,0 +1,66 @@
+
+/* registration and sign in for  */
+
+.Sign {
+  margin: 0 auto;
+  position: relative;
+
+  padding: 60px;
+}
+
+.sign_form {
+  margin: 0 auto;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.sign_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #575153;
+  text-transform: uppercase;
+}
+
+.sign_form input {
+  width: 550px;
+  height: 40px;
+
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+
+  margin: 17.5px 0;
+  padding: 0 8px;
+}
+
+.sign_btn {
+  width: 149px;
+  height: 59px;
+
+  background-color: #fff;
+  border: 2px solid #737373;
+
+  color: #737373;
+
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: all .2s;
+}
+
+.sign_btn:hover {
+  background-color: #00c8c8;
+  border-color: #00c8c8;
+  color: #f8f8f8;
+}
+
+/* end stiles of sign in form  */

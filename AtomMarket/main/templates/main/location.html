@@ -1,0 +1,48 @@
+{% extends 'main/main.html'  %}
+{% load static %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'css/location.css' %}">
+
+{% endblock %}
+
+
+{% block main %}
+
+<main>
+
+<section class="Map_section">
+
+  <div class="map">
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152484.10156449908!2d83.52715346586143!3d53.33315792529585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dda1e8c72eeeab%3A0xb0e7bbef8d87b503!2z0JHQsNGA0L3QsNGD0LssINCQ0LvRgtCw0LnRgdC60LjQuSDQutGA0LDQuQ!5e0!3m2!1sru!2sru!4v1579356765363!5m2!1sru!2sru" width="1200" height="600" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+  </div>
+
+  <div class="our_location_information">
+
+    <h2 class="location_title">Barnaul</h2>
+
+    <ul class="location_info-list">
+      <li><i class="fas fa-map-marker"></i> <span>180-182 Regent Street, London, W1B 5BT</span></li>
+      <li><i class="fas fa-phone-alt"></i> <span>0123-456-789</span></li>
+      <li><i class="fas fa-link"></i> <span>www.yourwebsite.com</span></li>
+      <li><i class="fas fa-envelope"></i> <span>support@yourwebsite.com</span></li>
+      <li><i class="fas fa-clock"></i> <span>Monday-Friday: 9am to 6pm  Saturday: 10am to 6pm  Sunday: 10am to 2pm</span></li>
+      <li><i class="fab fa-accessible-icon"></i> <span>delivery Vedyaikin</span></li>
+    </ul>
+
+  </div>
+
+</section>
+
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+
