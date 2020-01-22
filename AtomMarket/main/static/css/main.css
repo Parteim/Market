@@ -108,12 +108,13 @@ html {
 
 }
 
-.home_title {
+.home_title a {
   font-size: 24px;
   color: #222222;
 
   font-weight: 700;
 }
+
 
 .home_title span {
   font-weight: 400;
