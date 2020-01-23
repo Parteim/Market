@@ -1,0 +1,84 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+  {% block styles %}
+
+  <link rel="stylesheet" href="{% static 'css/product_instance.css' %}">
+
+  {% endblock %}
+
+{% block main %}
+
+<main>
+
+<section class="Product">
+
+  <div class="product_body">
+
+    <div class="product_slider">
+
+      {% if product.type_of_product == 'PC' %}
+
+      <img src="{{ product.pccharacters_set.get.img.url }}" alt="phone" class="product_img">
+
+
+      {% elif product.type_of_product == 'MobilePhone' %}
+
+      <img src="{{ product.mobilephonecharacters_set.get.img.url }}" alt="phone" class="product_img">
+
+      {% elif product.type_of_product == 'TV' %}
+
+      <img src="{{ product.tvcharacters_set.get.img.url }}" alt="phone" class="product_img">
+
+      {% endif %}
+      <!-- <button id="left_arrow" class="product_slider_btn"><i class="fas fa-arrow-alt-circle-left"></i></button>
+      <button id="right_arrow" class="product_slider_btn"><i class="fas fa-arrow-alt-circle-right"></i></button> -->
+
+    </div>
+
+    <div class="product_information">
+      <h2 class="product_title">{{ product }}</h2>
+      <p class="price_of_product">{{ product.price }}</p>
+      <p class="product_code">Product Code: <span> {{ product.id }}</span></p>
+      <p class="product_pescription">
+        {{ product.description }}
+      </p>
+      <form class="add_to_cart_form">
+        <p>How many</p>
+        <label class="label_of_counter" for="count_of_things">
+
+          <input readonly type="text" value="1" id="count_of_things" type="number" min="1">
+
+          <button type="button" id="count_btn_up"><i class="fas fa-chevron-up"></i></button>
+          <button type="button" id="count_btn_down"><i class="fas fa-chevron-down"></i></button>
+
+        </label>
+        <button type="submit" class="add_to_cart_btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="Product_detail_information">
+
+  <div class="characters">
+
+    <p class="character_title">Characters</p>
+    <h2 class="product_title_of_description">Ave classic sweatshirt</h2>
+    <ul class="product_characters">
+      <li class="product_character_item">Lorem modi: <span>ipsum</span></li>
+      <li class="product_character_item">Lorem modi: <span>ipsum</span></li>
+      <li class="product_character_item">Lorem modi: <span>ipsum</span></li>
+      <li class="product_character_item">Lorem modi: <span>ipsum</span></li>
+      <li class="product_character_item">Lorem modi: <span>ipsum</span></li>
+    </ul>
+
+  </div>
+
+</section>
+
+</main>
+
+{% endblock %}

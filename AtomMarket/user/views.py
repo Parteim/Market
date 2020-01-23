@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -13,7 +13,7 @@ def signup(request):
             form.save()
             name = form.cleaned_data.get('email')
             messages.success(request, f'User {name} has been successfully registered')
-            return redirect('sign_in')
+            return redirect('sign-in')
 
     else:
         form = CustomUserCreation()

@@ -26,246 +26,54 @@
 
       <ul class="product_list">
 
+        {% for product in products %}
+
         <li class="product_container">
 
-          <p class="product_price">20000R</p>
+          <p class="product_price">{{ product.price }}</p>
 
-          <img src="img/products__img/phone.png" alt="phone" class="product_img">
+           <a class="product_link" href="{% url 'product-instance' product.pk %}"></a>
+
+          {% if product.type_of_product == 'PC' %}
+
+            <img src="{{ product.pccharacters_set.get.img.url }}" alt="phone" class="product_img">
+
+
+          {% elif product.type_of_product == 'MobilePhone' %}
+
+          <img src="{{ product.mobilephonecharacters_set.get.img.url }}" alt="phone" class="product_img">
+
+          {% elif product.type_of_product == 'TV' %}
+
+          <img src="{{ product.tvcharacters_set.get.img.url }}" alt="phone" class="product_img">
+
+           {% endif %}
 
           <div class="product_description_menu">
 
             <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
+              {{ product.name }}
             </h3>
 
             <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
+              {{ product.description }}
             </p>
 
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
+            <form class="add_to_cart_btn" method="POST">
+
+              {% csrf_token %}
+              <input name="product" class="obj_of_product" value="{{ product }}" readonly type="text">
+
+              <button type="submit" title="put in cart" class="product_option_btn">
+                <i class="fas fa-cart-arrow-down"></i>
             </button>
+            </form>
+
           </div>
 
         </li>
-        <li class="product_container">
 
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/printer.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/tv.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_1.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_2.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_3.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_3.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_2.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_3.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
-        <li class="product_container">
-
-          <p class="product_price">20000R</p>
-
-          <img src="img/products__img/pc_3.png" alt="phone" class="product_img">
-
-          <div class="product_description_menu">
-
-            <h3 class="product_name">
-              Womens burnt orange casual tee  £29.95
-            </h3>
-
-            <p class="product_descript_text">
-              Classic casual t-shirt for women on the move.
-              100% cotton.
-              A hard-wearing sports t-shirt with microvent technology.
-            </p>
-
-            <button title="put in cart" href="#" class="product_option_btn">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-
-        </li>
+        {% endfor %}
 
       </ul>
 

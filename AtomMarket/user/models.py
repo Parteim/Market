@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+# from cart.models import Cart
 from .managers import CustomUserManager
 
 
