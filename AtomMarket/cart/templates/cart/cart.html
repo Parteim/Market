@@ -11,78 +11,89 @@
 
 <main>
 
-<section class="Cart">
+    <section class="Cart">
 
-  <div class="cart_box">
-    <ul class="cart_product_list">
+        <div class="cart_box">
+            <ul class="cart_product_list">
 
-      {% for product in user.cart_set.all %}
+                {% for product in user.cart_set.all %}
 
-      <li class="cart_product_list_item">
+                <li class="cart_product_list_item">
 
-        <div class="cart_product_img">
+                    <div class="cart_product_img">
 
-          {% if product.product.type_of_product == 'PC' %}
+                        {% if product.product.type_of_product == 'PC' %}
 
-          <img src="{{ product.product.pccharacters_set.get.img.url }}" alt="phone">
+                        <img src="{{ product.product.pccharacters_set.get.img.url }}" alt="phone">
 
-          {% elif product.product.type_of_product == 'TV' %}
+                        {% elif product.product.type_of_product == 'TV' %}
 
-          <img src="{{ product.product.tvcharacters_set.get.img.url }}" alt="phone">
+                        <img src="{{ product.product.tvcharacters_set.get.img.url }}" alt="phone">
 
-          {% elif product.product.type_of_product == 'MobilePhone' %}
+                        {% elif product.product.type_of_product == 'MobilePhone' %}
 
-          <img src="{{ product.product.mobilephonecharacters_set.get.img.url }}" alt="phone">
+                        <img src="{{ product.product.mobilephonecharacters_set.get.img.url }}" alt="phone">
 
-          {% endif %}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="cart_product_info">
+
+                        <div class="cart_product_title_and_price_box">
+
+                            <a href="{% url 'product-instance' product.product.pk %}">
+
+                                <h2 class="cart_product_title">{{ product.product }}</h2>
+
+                            </a>
+                            <p class="cart_product_price">{{ product.product.price }} <span>Rub</span></p>
+
+                        </div>
+
+                        <div class="cart_broduct_description_box">
+
+                            <p class="cart_product_description">
+                                {{ product.product.description }}
+                            </p>
+                            <p class="cart_count_of_product">Count: <span> 1 </span></p>
+
+                        </div>
+
+                    </div>
+
+                    <form method="POST" class="remove_product_form">
+
+                        {% csrf_token %}
+                        <input name="product" class="obj_of_product" value="{{ product.id }}" readonly type="text">
+
+                        <button type="submit" title="delet this product" class="cart_product_remove_btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+
+                    </form>
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+            <form class="send_order_box">
+                <p class="sum_of_price">
+                    40000R
+                </p>
+                <button type="submit" class="send_order_btn">Send order</button>
+            </form>
 
         </div>
 
-        <div class="cart_product_info">
-
-          <div class="cart_product_title_and_price_box">
-
-            <a href="{% url 'product-instance' product.pk %}">
-
-            <h2 class="cart_product_title">{{ product.product }}</h2>
-
-            </a>
-            <p class="cart_product_price">{{ product.product.price }} <span>Rub</span></p>
-
-          </div>
-
-          <div class="cart_broduct_description_box">
-
-            <p class="cart_product_description">
-              {{ product.product.description }}
-            </p>
-            <p class="cart_count_of_product">Count: <span> 1 </span></p>
-
-          </div>
-
-        </div>
-
-        <button title="delet this product" class="cart_product_remove_btn">
-          <i class="fas fa-times"></i>
-        </button>
-
-      </li>
-
-      {% endfor %}
-
-    </ul>
-
-    <form class="send_order_box">
-      <p class="sum_of_price">
-        40000R
-      </p>
-      <button type="submit" class="send_order_btn">Send order</button>
-    </form>
-
-  </div>
-
-</section>
+    </section>
 
 </main>
 
+{% endblock %}
+
+{% block scripts %}
+<script befer src="{% static 'js/cart.js' %}"></script>
 {% endblock %}
