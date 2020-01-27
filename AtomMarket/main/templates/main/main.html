@@ -40,7 +40,17 @@
         <li class="item_top_menu cart">
           <a href="{% url 'cart' %}">
             <i class="fas fa-shopping-cart"></i>
+
+            {% if user.cart_set.all.count != 0 %}
+
+            <span>{{ user.cart_set.all.count }}</span>
+
+            {% else %}
+
             <span>empty</span>
+
+            {% endif %}
+
             <i class="fas fa-angle-down"></i>
           </a>
         </li>
