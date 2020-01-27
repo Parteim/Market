@@ -47,7 +47,7 @@
                                 <h2 class="cart_product_title">{{ product.product }}</h2>
 
                             </a>
-                            <p class="cart_product_price">{{ product.product.price }} <span>Rub</span></p>
+                            <p class="cart_product_price"><span>{{ product.product.price }}</span> Rub</p>
 
                         </div>
 
@@ -81,7 +81,7 @@
 
             <form class="send_order_box">
                 <p class="sum_of_price">
-                    40000R
+                    <span id="sum_of_price">4000 </span> RUB
                 </p>
                 <button type="submit" class="send_order_btn">Send order</button>
             </form>
