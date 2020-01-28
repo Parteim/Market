@@ -67,10 +67,10 @@
       <h2 class="home_title"><a href="{% url 'home' %}">ATOM <span>STORE</span></a></h2>
 
       <menu class="main_menu_of_site">
-        <li class="menu_item"> <a href="#">menu</a> </li>
-        <li class="menu_item"> <a href="#">womens</a> </li>
-        <li class="menu_item"> <a href="#">the brand</a> </li>
-        <li class="menu_item"> <a href="#">local stores</a> </li>
+        <li class="menu_item"> <a href="{% url 'pc-page' %}">PC</a> </li>
+        <li class="menu_item"> <a href="{% url 'mobile-phone-page' %}">mobile phones</a> </li>
+        <li class="menu_item"> <a href="{% url 'tv-page' %}">TV</a> </li>
+        <li class="menu_item"> <a href="{% url 'location-page' %}">location</a> </li>
         <li class="menu_item search_item_of_menu">
           <form>
             {% csrf_token %}
