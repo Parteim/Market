@@ -59,7 +59,7 @@
               {{ product.description }}
             </p>
 
-            <form class="add_to_cart_btn" method="POST">
+            <form action="{% url 'add-in-cart' %}" class="add_to_cart_btn" method="POST">
 
               {% csrf_token %}
               <input name="product" class="obj_of_product" value="{{ product }}" readonly type="text">

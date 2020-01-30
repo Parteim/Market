@@ -72,12 +72,12 @@
         <li class="menu_item"> <a href="{% url 'tv-page' %}">TV</a> </li>
         <li class="menu_item"> <a href="{% url 'location-page' %}">location</a> </li>
         <li class="menu_item search_item_of_menu">
-          <form>
+          <form action="{% url 'search' %}" method="GET">
             {% csrf_token %}
             <label class="search_container" for="search">
 
-              <input type="text" id="search" placeholder="Search...">
-              <button class="search_btn">
+              <input name="search" type="text" id="search" placeholder="Search...">
+              <button type="submit" class="search_btn">
                 <i class="fas fa-search"></i>
               </button>
 
