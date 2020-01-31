@@ -85,7 +85,10 @@ def location_page(request):
 
 
 def search(request):
+    template = 'main/index.html'
     search_value = request.GET.get('search')
+    if search_value == 'BAN':
+        template = 'main/ban.html'
     products = Product.objects.filter(Q(name__icontains=search_value))
 
     data = {
@@ -93,7 +96,7 @@ def search(request):
         'products': products,
     }
 
-    return render(request, 'main/index.html', data)
+    return render(request, template, data)
 
 
 def add_in_cart(request):
