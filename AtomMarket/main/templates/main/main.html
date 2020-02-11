@@ -35,8 +35,8 @@
       <a href="#">Currency:GBP</a>
 
       <ul class="top_menu">
-        <li class="item_top_menu"><a href="{% url 'sign-up' %}">Register</a></li>
-        <li class="item_top_menu"><a href="{% url 'sign-in' %}">Sign in</a></li>
+        <li class="item_top_menu"><a href="{% url 'sign-up' %}">Регистрация</a></li>
+        <li class="item_top_menu"><a href="{% url 'sign-in' %}">Вход</a></li>
         <li class="item_top_menu cart">
           <a href="{% url 'cart' %}">
             <i class="fas fa-shopping-cart"></i>
@@ -47,7 +47,7 @@
 
             {% else %}
 
-            <span>empty</span>
+            <span>пусто</span>
 
             {% endif %}
 
@@ -67,16 +67,16 @@
       <h2 class="home_title"><a href="{% url 'home' %}">ATOM <span>STORE</span></a></h2>
 
       <menu class="main_menu_of_site">
-        <li class="menu_item"> <a href="{% url 'pc-page' %}">PC</a> </li>
-        <li class="menu_item"> <a href="{% url 'mobile-phone-page' %}">mobile phones</a> </li>
-        <li class="menu_item"> <a href="{% url 'tv-page' %}">TV</a> </li>
-        <li class="menu_item"> <a href="{% url 'location-page' %}">location</a> </li>
+        <li class="menu_item"> <a href="{% url 'pc-page' %}">ПК</a> </li>
+        <li class="menu_item"> <a href="{% url 'mobile-phone-page' %}">Мобильные телефоны</a> </li>
+        <li class="menu_item"> <a href="{% url 'tv-page' %}">ТВ</a> </li>
+        <li class="menu_item"> <a href="{% url 'location-page' %}">Местоположение</a> </li>
         <li class="menu_item search_item_of_menu">
           <form action="{% url 'search' %}" method="GET">
             {% csrf_token %}
             <label class="search_container" for="search">
 
-              <input name="search" type="text" id="search" placeholder="Search...">
+              <input name="search" type="text" id="search" placeholder="Поиск...">
               <button type="submit" class="search_btn">
                 <i class="fas fa-search"></i>
               </button>
@@ -121,7 +121,7 @@
     {% csrf_token %}
 
     <h3 class="feedback_title">
-      Feedback
+      Обратная связь
     </h3>
 
     <label for="email_feedback_form">
@@ -129,11 +129,11 @@
     </label>
 
     <label for="text_feedback_form">
-      <input type="text" id="text_feedback_form" placeholder="Text...">
+      <input type="text" id="text_feedback_form" placeholder="Текст...">
     </label>
 
     <button type="submit" class="btn_of_feedback_form">
-      send
+      Отправить
     </button>
 
 
@@ -141,7 +141,7 @@
 
   <div class="bttom_line">
 
-    <p class="date">2019 - 2200</p>
+    <p class="date">2019 - 2020</p>
 
   </div>
 

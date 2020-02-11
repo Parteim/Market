@@ -39,12 +39,12 @@
             <div class="product_information">
                 <h2 class="product_title">{{ product }}</h2>
                 <p class="price_of_product">{{ product.price }}</p>
-                <p class="product_code">Product Code: <span> {{ product.id }}</span></p>
+                <p class="product_code">Id продукта: <span> {{ product.id }}</span></p>
                 <p class="product_pescription">
                     {{ product.description }}
                 </p>
                 <form method="POST" class="add_to_cart_form">
-                    <p>How many</p>
+                    <p>Количество</p>
                     <label class="label_of_counter" for="count_of_things">
 
                       {% csrf_token %}
@@ -54,7 +54,7 @@
                         <button type="button" id="count_btn_down"><i class="fas fa-chevron-down"></i></button>
 
                     </label>
-                    <button type="submit" class="add_to_cart_btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    <button type="submit" class="add_to_cart_btn"><i class="fas fa-shopping-cart"></i> В корзину</button>
                 </form>
             </div>
 
@@ -68,7 +68,7 @@
 
             {% if product.type_of_product == 'PC' %}
 
-            <p class="character_title">Characters</p>
+            <p class="character_title">Характеристики</p>
             <h2 class="product_title_of_description">{{ product }}</h2>
             <ul class="product_characters">
 
@@ -85,7 +85,7 @@
 
             {% elif product.type_of_product == 'MobilePhone' %}
 
-            <p class="character_title">Characters</p>
+            <p class="character_title">Характеристики</p>
             <h2 class="product_title_of_description">{{ product }}</h2>
             <ul class="product_characters">
 
@@ -99,7 +99,7 @@
 
             {% elif product.type_of_product == 'TV' %}
 
-            <p class="character_title">Characters</p>
+            <p class="character_title">Характеристики</p>
             <h2 class="product_title_of_description">{{ product }}</h2>
             <ul class="product_characters">
 
